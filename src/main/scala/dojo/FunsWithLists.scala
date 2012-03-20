@@ -4,7 +4,16 @@ import collection.immutable.List
 
 object FunsWithLists {
 
-  def labels(ls: List[Game]) = Nil
+  def labels(ls: List[Game]) = {
+    ls.map(item => item.label)
+  }
+
+
+//  {
+//    var names:List[String] = List()
+//    ls foreach(game => names = game.label :: names)
+//    names.reverse
+//  }
 
   def averageRatingsOf(l:String,  ls:List[Game]) = 0
 
