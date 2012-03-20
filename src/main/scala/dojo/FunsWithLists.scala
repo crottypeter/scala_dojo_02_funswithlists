@@ -15,6 +15,7 @@ object FunsWithLists {
 //  }
 
   def averageRatingsOf(l:String,  ls:List[Game]) = {
+    //need to filter this
     totalRatingsOf(ls)  / ls.length
   }
 
