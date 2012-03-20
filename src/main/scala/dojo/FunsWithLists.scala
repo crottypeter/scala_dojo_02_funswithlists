@@ -14,7 +14,9 @@ object FunsWithLists {
 //    names.reverse
 //  }
 
-  def averageRatingsOf(l:String,  ls:List[Game]) = 0
+  def averageRatingsOf(l:String,  ls:List[Game]) = {
+    totalRatingsOf(ls)  / ls.length
+  }
 
   def totalRatingsOf(ls: List[Game]):Int = {
     ls.map(item =>item.rating).sum
