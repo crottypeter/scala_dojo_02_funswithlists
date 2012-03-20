@@ -8,8 +8,7 @@ object FunsWithLists {
     ls.map(item => item.label)
   }
 
-
-//  {
+//  The long way {
 //    var names:List[String] = List()
 //    ls foreach(game => names = game.label :: names)
 //    names.reverse
@@ -17,7 +16,9 @@ object FunsWithLists {
 
   def averageRatingsOf(l:String,  ls:List[Game]) = 0
 
-  def totalRatingsOf(ls: List[Game]):Int = 0
+  def totalRatingsOf(ls: List[Game]):Int = {
+    ls.map(item =>item.rating).sum
+  }
 
   def totalRatingsOfLabel(label: String, list: List[Game]):Int = 0
 
