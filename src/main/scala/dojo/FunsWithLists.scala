@@ -37,15 +37,19 @@ object FunsWithLists {
 }
 
   def increaseRatingBy(inc: Int, ls: List[Game]) = {
-    ls.map(item => Game(item.label, item.rating + inc))
+    ls map(item => Game(item label, item.rating + inc))
   }
 
   def decreaseRatingBy(i: Int, s: String, list: List[Game]) = {
-    list.map(item => if (item.label.equals(s)) Game(item.label, item.rating - i) else item)
+    list.map(item => if (item.label == s) Game(item label, item.rating - i) else item)
   }
 
-  def createFunctionToFindGamesByLabel(label: String):(List[Game]) => List[Game] = identity(_)
+  def createFunctionToFindGamesByLabel(label: String):(List[Game]) => List[Game] = {
+    (lg:List[Game]) => lg filter(_.label == label)
+  }
 
-  def zipWithKey = (f: (Game) => String, ls: List[Game]) => Nil
+  def zipWithKey = (f: (Game) => String, ls: List[Game]) => {
+    ls map(item => (f(item), item))
+  }
 
 }
